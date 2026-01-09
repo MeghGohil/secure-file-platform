@@ -5,7 +5,6 @@
 .terraform.lock.hcl
 
 # Terraform binary
-terraform
 terraform_*
 
 # AWS CLI
