@@ -12,15 +12,21 @@ if [ -z "$FILE" ]; then
 fi
 
 if [ ! -f "$FILE" ]; then
-  echo "Error: File not found!"
+  echo "❌ Error: File not found!"
   exit 1
 fi
 
 # -------- ENCRYPT FILE --------
-gpg --yes --output "$FILE.gpg" --encrypt --recipient "$GPG_KEY_ID" "$FILE"
+gpg --yes --output "$FILE.gpg" --encrypt --recipient "$GPG_KEY_ID" "$FILE" || {
+  echo "❌ GPG encryption failed. Check public key."
+  exit 1
+}
 
 # -------- UPLOAD TO S3 --------
-aws s3 cp "$FILE.gpg" "s3://$BUCKET_NAME/"
+aws s3 cp "$FILE.gpg" "s3://$BUCKET_NAME/" || {
+  echo "❌ Upload to S3 failed."
+  exit 1
+}
 
 # -------- SUCCESS MESSAGE --------
 echo "✅ File encrypted and uploaded successfully to S3"
