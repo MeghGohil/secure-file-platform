@@ -1,0 +1,38 @@
+---
+- name: Secure File Platform – Automated Setup
+  hosts: local
+  become: yes
+
+  tasks:
+    - name: Ensure GPG is installed
+      yum:
+        name: gnupg
+        state: present
+
+    - name: Ensure Terraform is installed
+      shell: |
+        curl -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/1.6.4/terraform_1.6.4_linux_amd64.zip
+        unzip -o /tmp/terraform.zip -d /usr/local/bin/
+      args:
+        creates: /usr/local/bin/terraform
+
+    - name: Ensure AWS CLI is installed
+      shell: |
+        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip"
+        unzip -o /tmp/awscliv2.zip -d /tmp/
+        /tmp/aws/install
+      args:
+        creates: /usr/local/bin/aws
+
+    - name: Copy upload.sh script
+      copy:
+        src: upload.sh
+        dest: /home/centos/upload.sh
+        mode: '0755'
+
+    - name: Copy download.sh script
+      copy:
+        src: download.sh
+        dest: /home/centos/download.sh
+        mode: '0755'
+
