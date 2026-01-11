@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: secure-file-platform
+data:
+  AWS_REGION: ap-south-1
+  S3_BUCKET: secure-file-platform-bucket
