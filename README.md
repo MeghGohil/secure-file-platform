@@ -1,118 +1,217 @@
-# Secure File Platform
+# 🔐 Secure File Platform
 
-**DevOps Project** | Developed by: Megh Gohil  
-**Date:** January 2026  
-**Technologies Used:** AWS (S3, IAM), Terraform, Bash, GPG, GitHub  
-
----
-
-## **Project Overview**
-
-The **Secure File Platform** is a cloud-based application designed to provide **secure file upload, storage, and retrieval**.  
-Files are **encrypted locally using GPG** before upload to AWS S3, ensuring **end-to-end data security**.  
-The project is built following **DevOps best practices**, including infrastructure-as-code, automation, and version control.
+**DevOps Project**
+**Developed by:** Megh Gohil
+**Duration:** January 2026
+**Status:** ✅ Project Completed Successfully
 
 ---
 
-## **Key Features**
+## 📌 Project Overview
 
-- **Secure File Handling**
-  - Files are encrypted using **GPG** before uploading.
-  - Only authorized IAM roles can access files.
+The **Secure File Platform** is an end-to-end DevOps project that demonstrates secure file handling, cloud infrastructure automation, containerization, CI/CD, and Kubernetes deployment.
 
-- **AWS S3 Integration**
-  - Files stored securely in an **AWS S3 bucket**.
-  - Bucket managed through **Terraform** (infrastructure-as-code).
-
-- **IAM Role Access**
-  - Dedicated IAM role with **least privilege policy** for accessing S3.
-  - Securely integrated with scripts to avoid exposing credentials.
-
-- **Terraform Automation**
-  - Existing S3 bucket imported and managed in Terraform.
-  - IAM roles and policies automated.
-  - Enables **repeatable and safe deployments**.
-
-- **DevOps Practices**
-  - GitHub used for **version control** and project tracking.
-  - `.gitignore` configured to avoid committing secrets and temporary files.
-  - Project structured to be **scalable and maintainable**.
+Files are encrypted locally using **GPG**, stored securely in **AWS S3**, and accessed using **IAM roles**.
+The infrastructure and deployment are fully automated using **Terraform, Docker, Ansible, GitLab CI/CD, and Kubernetes**, following real-world DevOps best practices.
 
 ---
 
-## **Project Structure**
+## 🛠️ Technologies Used
+
+* **AWS:** S3, IAM
+* **Terraform:** Infrastructure as Code
+* **Bash & GPG:** Encryption & automation
+* **Docker:** Containerization
+* **Ansible:** Configuration management
+* **GitLab CI/CD:** Automation pipeline
+* **Kubernetes:** Container orchestration
+* **Git & GitHub:** Version control
+
+---
+
+## 📁 Project Folder Structure
+
+```
 secure-file-platform/
-├── terraform/
-│ ├── main.tf # Terraform resources for S3 & IAM
-│ ├── variables.tf # Variables for bucket name and region
-│ ├── outputs.tf # Outputs for bucket and IAM role
-├── scripts/
-│ ├── upload.sh # Bash script to encrypt and upload file
-│ ├── download.sh # Bash script to download and decrypt file
-├── .gitignore # Ignore sensitive and temporary files
-├── README.md # Project documentation
-
-
----
-
-## **Day-wise Progress & Key Learnings**
-
-### **Day 1 – Project Planning & GitHub Setup**
-- Initialized **GitHub repository** for the project.
-- Planned project workflow and **folder structure**.
-- Reviewed **tools and technologies** needed for DevOps workflow:
-  - Git/GitHub, AWS, Terraform, Bash, GPG.
-
-### **Day 2 – AWS Basics & IAM**
-- Created **AWS IAM role** for S3 access.
-- Learned about **IAM policies, roles, and least privilege principle**.
-- Installed and configured **AWS CLI** for secure interaction with AWS.
-
-### **Day 3 – Bash Scripts & GPG Encryption**
-- Installed **GPG** on Linux.
-- Created scripts:
-  - `upload.sh` → encrypt & upload files to S3.
-  - `download.sh` → download & decrypt files.
-- Verified **secure upload and download** functionality.
-
-### **Day 4 – Terraform & Infrastructure-as-Code**
-- Imported **existing S3 bucket** into Terraform.
-- Created **IAM role and policy** via Terraform.
-- Learned **Terraform commands**:
-  - `terraform init`, `terraform import`, `terraform plan`, `terraform apply`
-- Ensured **infrastructure is reproducible, safe, and version-controlled**.
+├── K8s/            # Kubernetes manifests
+├── ansible/        # Ansible playbooks
+├── docker/         # Dockerfile and configs
+├── git-lab/        # GitLab CI/CD pipeline files
+├── scripts/        # Upload & download scripts
+├── terraform/      # Terraform IaC files
+├── .gitignore
+├── README.md
+```
 
 ---
 
-## **Key Learnings So Far**
-
-- Understanding **AWS IAM** and secure access for services.
-- Managing **S3 buckets securely** and avoiding unnecessary costs.
-- Automating infrastructure using **Terraform**.
-- Writing **Bash scripts for encryption** using GPG.
-- Version controlling **infrastructure and scripts** in GitHub.
-- Using **.gitignore** to keep sensitive data safe.
+## 📆 Day-Wise Project Progress & Learnings
 
 ---
 
-## **Next Steps**
-- Automate server configuration using **Ansible**.
-- Integrate **GitLab CI/CD** for automated deployment.
-- Containerize the platform using **Docker** and deploy on **Kubernetes**.
-- Make project **fully resume-ready** and interview-proof.
+### 🟢 Day 1 – Project Planning & GitHub Setup
+
+**Completed Tasks**
+
+* Created GitHub repository
+* Designed complete project folder structure
+* Planned DevOps workflow from development to deployment
+
+**Key Learnings**
+
+* How to structure a real DevOps project
+* Importance of version control and clean repo structure
+* Planning before implementation
 
 ---
 
-## **References**
-- [AWS Documentation](https://aws.amazon.com/documentation/)
-- [Terraform Documentation](https://www.terraform.io/docs/)
-- [GPG Encryption Guide](https://gnupg.org/documentation/)
-- [GitHub Docs](https://docs.github.com/)
+### 🟢 Day 2 – AWS & IAM Configuration
+
+**Completed Tasks**
+
+* Created AWS S3 bucket for secure storage
+* Created IAM role (**SecureFileS3Role**)
+* Applied least-privilege IAM policy
+* Configured AWS CLI securely
+
+**Key Learnings**
+
+* IAM roles vs IAM users
+* Least privilege security principle
+* Secure access without hardcoding credentials
 
 ---
 
-**Project Status:** ✅ Active – Day 4 Completed (Terraform applied successfully)  
-**Bucket Name:** `secure-file-platform-bucket`  
+### 🟢 Day 3 – Bash Scripting & GPG Encryption
+
+**Completed Tasks**
+
+* Installed and configured GPG
+* Created scripts:
+
+  * `upload.sh` → Encrypt & upload files
+  * `download.sh` → Download & decrypt files
+* Verified secure file handling
+
+**Key Learnings**
+
+* File encryption & decryption using GPG
+* Bash scripting for automation
+* End-to-end data security concepts
+
+---
+
+### 🟢 Day 4 – Terraform (Infrastructure as Code)
+
+**Completed Tasks**
+
+* Imported existing S3 bucket into Terraform
+* Created IAM role & policy using Terraform
+* Applied Terraform configuration
+
+**Key Learnings**
+
+* Terraform import & state management
+* IaC benefits (repeatable, version-controlled infra)
+* Terraform commands:
+
+  * init, plan, apply, import
+
+---
+
+### 🟢 Day 5 – Docker Containerization
+
+**Completed Tasks**
+
+* Created Dockerfile for the application
+* Built and tested Docker images
+* Ensured scripts work inside containers
+
+**Key Learnings**
+
+* Docker image lifecycle
+* Containerizing scripts & tools
+* Difference between container and VM
+
+---
+
+### 🟢 Day 6 – Ansible Automation
+
+**Completed Tasks**
+
+* Created Ansible playbooks
+* Automated server configuration
+* Managed dependencies and environment setup
+
+**Key Learnings**
+
+* Configuration management concepts
+* Idempotency in Ansible
+* Automation of repetitive tasks
+
+---
+
+### 🟢 Day 7 – GitLab CI/CD Integration
+
+**Completed Tasks**
+
+* Created GitLab CI pipeline files
+* Automated build and deployment steps
+* Integrated CI/CD with repository
+
+**Key Learnings**
+
+* CI/CD pipeline stages
+* Automated testing & deployment
+* DevOps lifecycle automation
+
+---
+
+### 🟢 Day 8 – Kubernetes Deployment
+
+**Completed Tasks**
+
+* Created Kubernetes manifests
+* Deployed containerized app to K8s
+* Managed pods and services
+
+**Key Learnings**
+
+* Kubernetes architecture
+* Pods, deployments, and services
+* Container orchestration concepts
+
+---
+
+## 📚 Overall Key Learnings
+
+* Secure cloud storage using AWS S3 & IAM
+* Encryption using GPG
+* Infrastructure automation with Terraform
+* Containerization using Docker
+* Configuration management using Ansible
+* CI/CD pipelines using GitLab
+* Kubernetes orchestration
+* Real-world DevOps workflow
+
+---
+
+## 📌 Final Project Status
+
+✅ **All Days Completed**
+✅ **All Components Implemented**
+✅ **Tested & Verified**
+
+**S3 Bucket:** `secure-file-platform-bucket`
 **IAM Role:** `SecureFileS3Role`
 
 ---
+
+## 🚀 Conclusion
+
+This project demonstrates a **complete DevOps lifecycle**, from secure file handling to automated deployment using modern DevOps tools.
+It is **production-ready, resume-ready, and interview-ready**.
+
+---
+
+⭐ *This project reflects real-world DevOps skills and best practices.*
